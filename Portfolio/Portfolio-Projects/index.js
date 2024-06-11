@@ -1,3 +1,5 @@
+//look at fixes in the Pen https://codepen.io/ghaste/pen/OJqLbvg
+//for adding mouse trail to a page that scrolls beyond the viewport, as would be the case with most websites - lol
 let x1=0, y1=0;
 window.client
 const 
@@ -33,7 +35,8 @@ const
     document.body.appendChild(str);
     //console.log(rand(0, 3));
     const fs = 10 + 5 * parseFloat(getComputedStyle(str).fontSize);
-    
+    //console.log(vh, y, fs);
+    //console.log((y+fs)>vh?vh-y:fs);
     str.animate({
       translate: `0 ${(y+fs)>vh?vh-y:fs}px`,
       opacity: 0,
@@ -57,5 +60,3 @@ addEventListener("mousemove", (e) => {
     y1 = clientY;
   }
 });
-
-// Projects

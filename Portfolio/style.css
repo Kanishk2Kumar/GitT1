@@ -282,130 +282,294 @@ p:nth-child(4) {
     --scrollbar-color: rgba(255, 255, 255, 0.1);
   }
 }
-/* Ring Div */
-.Kanishk{
-  height: auto;
-  width: 300px;
-  border: 4px solid rgb(12, 8, 8);
-  border-radius: 40px;
-}
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-* {
+/* Abhinav */
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
 }
-.ring {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+:root {
+  --clr-bg: #efefef;
+  --clr-primary: #0f172a;
+  --easing: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --ani-speed: 300ms;
 }
-.ring i {
-  position: absolute;
-  inset: 0;
-  border: 2px solid #fff;
-  transition: 0.5s;
-}
-.ring i:nth-child(1) {
-  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  animation: animate 6s linear infinite;
-}
-.ring i:nth-child(2) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate 4s linear infinite;
-}
-.ring i:nth-child(3) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate2 10s linear infinite;
-}
-.ring:hover i {
-  border: 6px solid var(--clr);
-  filter: drop-shadow(0 0 20px var(--clr));
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-.login {
-  position: absolute;
-  width: 300px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-}
-.login h2 {
-  font-size: 2em;
-  color: #fff;
-}
-.login .inputBx {
-  position: relative;
-  width: 100%;
-}
-.login .inputBx input {
-  position: relative;
-  width: 100%;
-  padding: 12px 20px;
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 40px;
-  font-size: 1.2em;
-  color: #fff;
-  box-shadow: none;
-  outline: none;
-}
-.login .inputBx input[type="submit"] {
-  width: 100%;
-  background: #0078ff;
-  background: linear-gradient(45deg, #ff357a, #fff172);
+
+/* Reset button */
+button {
+  appearance: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  text-transform: none;
+  line-height: normal;
+  overflow: visible;
 }
-.login .inputBx input::placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-.login .links {
-  position: relative;
+header {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
-.login .links a {
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: inherit; /* Use the same color as the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
   color: #fff;
   text-decoration: none;
+  font-size: 1rem;
+  position: relative;
 }
-.headerL{
-  color: whitesmoke;
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ff0;
+  transition: color 300ms ease-in-out;
 }
-#RingExternal{
-  margin-left: 200px;
-  margin-top: 20px;
-  margin-right: 50px;
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
 }
-#introduction{
-  margin: 20px;
-  color: rgb(68, 190, 190);
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 300;
-  font-size: 50px;
+
+.nav-links a:hover::before,
+.nav-links a:focus::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.nav-button {
+  opacity: 0;
+  transform: translateX(-500px);
+  animation: slide-in var(--ani-speed) ease-out forwards;
+  animation-delay: calc(var(--order, 0) * var(--ani-speed));
+}
+
+.Header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 100px;
+}
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fff; */
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.intro-text {
+  max-width: 600px;
+  margin-right: 2rem;
+  font-weight: 200;
+  color: #fff;
+}
+
+.intro-photo img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.buttons {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #00000050;
+  border: 1px solid #ffffff30;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.buttons::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #00000020;
+  z-index: -1;
+  border-radius: inherit;
+  transition: inset 500ms ease-in-out;
+}
+
+.buttons:hover::before {
+  inset: -2rem;
+  transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.buttons button {
+  background-color: #00000050;
+  border: 1px solid #ffffff30;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  position: relative;
+  isolation: isolate;
+  color: #ffffff90;
+}
+
+.buttons button svg {
+  width: 1.8rem;
+}
+
+.buttons button p {
+  position: absolute;
+  width: 100%;
+  font-size: 0.8rem;
+  opacity: 0;
+  left: 0;
+  bottom: 0.5rem;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 150ms ease-in-out 0ms;
+  outline: none;
+  transform: translateY(10px);
+}
+
+.buttons button:hover p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-in-out 150ms;
+}
+
+.buttons button:focus-visible,
+.buttons button:hover {
+  transform: scale(1.15);
+  z-index: 10;
+  color: #fff;
+  background-color: rgba(var(--bg), 0.5);
+}
+
+.buttons:has(button:focus-visible) button:not(:focus-visible),
+.buttons:has(button:hover) button:not(:hover) {
+  opacity: 50%;
+  transform: scale(0.85);
+  z-index: -10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [slide-in-left] {
+    opacity: 0;
+    transform: translateX(-500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-right] {
+    opacity: 0;
+    transform: translateX(500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-top] {
+    opacity: 0;
+    transform: translateY(-500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-bottom] {
+    opacity: 0;
+    transform: translateY(500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [scale-up] {
+    transform: scale(0);
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [scale-from-top] {
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
