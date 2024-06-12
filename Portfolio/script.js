@@ -89,16 +89,19 @@ addEventListener("mousemove", (e) => {
         y1 = clientY;
     }
 });
-// Self Typing Text
-var k = 0;
-var txt2 = "Kanishk.Dev";
-var speed2 = 20;
-
-function typeWriter() {
-  if (i < txt2.length) {
-    document.getElementsByClassName(".logo").innerHTML += txt.charAt(i);
-    k++;
-    setTimeout(typeWriter, speed2);
-  }
-}
-typeWriter(txt2);
+// New TypeIt effect for the logo
+new TypeIt('#logo', {
+    speed: 150,
+    startDelay: 900,
+    loop: true
+})
+    .type('<em class="c-braces" style="margin-right: 6px;">{{</em><em class="c-braces">}}</em>')
+    .pause(500)
+    .delete(2)
+    .pause(300)
+    .type('<em>Abhinav</em>')
+    .pause(750)
+    .delete(1)
+    .pause(750)
+    .type('<em>.dev</em><em class="c-braces">}}</em>')
+    .pause(1500).go();
