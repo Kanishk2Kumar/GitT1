@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 .star {
   transform-style: preserve-3d;
   width: 1px;
@@ -6,6 +7,7 @@
   position: absolute;
   color: red;
 }
+
 .star:before {
   position: absolute;
   content: '\2726';
@@ -15,6 +17,7 @@
   //filter: drop-shadow(0 0 .5em white); */
   text-shadow: 0 0 .8em #fff5;
 }
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -22,53 +25,59 @@ body {
   color: #F9F6EF;
   display: grid;
   place-content: center;
-  background-image: 
-    radial-gradient(
-    circle at 50% 50%,
+  background-image:
+    radial-gradient(circle at 50% 50%,
       #2f3040,
-      #1f2020
-    );
+      #1f2020);
 }
 
-.Icon{
-    height: 50px;
-    width: auto;
-    border-radius: 5px;
+.Icon {
+  height: 50px;
+  width: auto;
+  border-radius: 5px;
 }
-#Icon1{
+
+#Icon1 {
   list-style-type: none;
 }
+
 /* About Me */
 @property --scroll-y-position {
   syntax: "<percentage>";
   initial-value: -10%;
   inherits: false;
 }
+
 @property --reflection-y-position {
   syntax: "<percentage>";
   initial-value: -50%;
   inherits: false;
 }
+
 @property --scrollbar-color {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
 }
+
 @property --opacity-1 {
   syntax: "<number>";
   inherits: false;
   initial-value: 0.1;
 }
+
 @property --opacity-2 {
   syntax: "<number>";
   inherits: false;
   initial-value: 0.1;
 }
+
 @property --opacity-3 {
   syntax: "<number>";
   inherits: false;
   initial-value: 0.1;
 }
+
 @property --opacity-4 {
   syntax: "<number>";
   inherits: false;
@@ -80,36 +89,39 @@ body {
   inherits: false;
   initial-value: 10;
 }
+
 @property --text-offset-2 {
   syntax: "<number>";
   inherits: false;
   initial-value: 10;
 }
+
 @property --text-offset-3 {
   syntax: "<number>";
   inherits: false;
   initial-value: 10;
 }
+
 @property --text-offset-4 {
   syntax: "<number>";
   inherits: false;
   initial-value: 10;
 }
+
 html::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar {
   width: 4px;
   height: 100%;
   background-color: var(--scrollbar-color);
-  background-image: radial-gradient(
-    circle at 0% var(--scroll-y-position),
-    rgb(112, 153, 255) 0%,
-    rgba(56, 106, 249, 0.79135) 10px,
-    rgba(10, 76, 242, 0.53) 20px,
-    rgba(255, 255, 255, 0) 40px,
-    rgba(49, 49, 49, 0) 100%
-  );
+  background-image: radial-gradient(circle at 0% var(--scroll-y-position),
+      rgb(112, 153, 255) 0%,
+      rgba(56, 106, 249, 0.79135) 10px,
+      rgba(10, 76, 242, 0.53) 20px,
+      rgba(255, 255, 255, 0) 40px,
+      rgba(49, 49, 49, 0) 100%);
   animation: on-scrolling both linear;
   animation-timeline: scroll();
   animation-range: 10vh;
@@ -118,17 +130,16 @@ html::-webkit-scrollbar {
 .container {
   width: 360px;
   height: 100%;
-  background: linear-gradient(
-    132deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(238, 238, 238, 0.03) 20%,
-    rgba(202, 202, 202, 0.04) 70%,
-    rgba(171, 171, 171, 0.02) 100%
-  );
+  background: linear-gradient(132deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(238, 238, 238, 0.03) 20%,
+      rgba(202, 202, 202, 0.04) 70%,
+      rgba(171, 171, 171, 0.02) 100%);
   border: solid rgba(255, 255, 255, 0.06) 1px;
   margin-left: 15px;
   position: relative;
 }
+
 .container::before,
 .container::after {
   content: "";
@@ -138,47 +149,46 @@ html::-webkit-scrollbar {
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 76, 242, 0) 0%,
-    rgba(10, 76, 242, 0.75203) 38.288288288288285%,
-    rgb(77, 127, 255) 50.9132179054054%,
-    rgba(10, 76, 242, 0.75248) 63.06306306306306%,
-    rgba(10, 76, 242, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(10, 76, 242, 0) 0%,
+      rgba(10, 76, 242, 0.75203) 38.288288288288285%,
+      rgb(77, 127, 255) 50.9132179054054%,
+      rgba(10, 76, 242, 0.75248) 63.06306306306306%,
+      rgba(10, 76, 242, 0) 100%);
   background-repeat: no-repeat;
   background-position-y: var(--reflection-y-position);
   animation: on-scrolling both linear;
   animation-timeline: scroll();
   animation-range: 10vh;
 }
+
 .container::before {
   background-size: 1px 150px;
   filter: blur(1px);
 }
+
 .container::after {
   background-size: 10px 150px;
   filter: blur(10px);
 }
 
 .About {
+  padding-top: 20px;
   width: 105%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 800px;
+  height: 500px;
   font-family: sans-serif;
 }
 
 p {
-  background-image: linear-gradient(
-    270deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.9) 90%,
-    rgb(191, 209, 255) 100%
-  );
+  background-image: linear-gradient(270deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.9) 90%,
+      rgb(191, 209, 255) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -201,14 +211,17 @@ p:nth-child(1) {
   opacity: var(--opacity-1);
   transform: translateY(calc(var(--text-offset-1) * 1px));
 }
+
 p:nth-child(2) {
   opacity: var(--opacity-2);
   transform: translateY(calc(var(--text-offset-2) * 1px));
 }
+
 p:nth-child(3) {
   opacity: var(--opacity-3);
   transform: translateY(calc(var(--text-offset-3) * 1px));
 }
+
 p:nth-child(4) {
   opacity: var(--opacity-4);
   transform: translateY(calc(var(--text-offset-4) * 1px));
@@ -219,9 +232,11 @@ p:nth-child(4) {
     --scroll-y-position: -10%;
     --reflection-y-position: -22%;
   }
+
   1% {
     --scrollbar-color: rgba(255, 255, 255, 0.1);
   }
+
   25% {
     --opacity-1: 1;
     --opacity-2: 0.1;
@@ -233,6 +248,7 @@ p:nth-child(4) {
     --text-offset-3: 10;
     --text-offset-4: 10;
   }
+
   50% {
     --scroll-y-position: 50%;
     --reflection-y-position: 50%;
@@ -246,6 +262,7 @@ p:nth-child(4) {
     --text-offset-3: 10;
     --text-offset-4: 10;
   }
+
   60% {
     --opacity-1: 0.1;
     --opacity-2: 0.1;
@@ -257,6 +274,7 @@ p:nth-child(4) {
     --text-offset-3: 0;
     --text-offset-4: 10;
   }
+
   90% {
     --opacity-1: 0.1;
     --opacity-2: 0.1;
@@ -268,6 +286,7 @@ p:nth-child(4) {
     --text-offset-3: 10;
     --text-offset-4: 0;
   }
+
   100% {
     --text-offset-1: 10;
     --text-offset-2: 10;
@@ -282,6 +301,7 @@ p:nth-child(4) {
     --scrollbar-color: rgba(255, 255, 255, 0.1);
   }
 }
+
 /* Abhinav */
 *,
 ::before,
@@ -290,6 +310,7 @@ p:nth-child(4) {
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --clr-bg: #efefef;
   --clr-primary: #0f172a;
@@ -314,8 +335,10 @@ button {
   line-height: normal;
   overflow: visible;
 }
+
 header {
   width: 100%;
+  height: 60px;
   background-color: #333;
   color: #fff;
   padding: 1rem 0;
@@ -337,8 +360,10 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: inherit; /* Use the same color as the parent element */
-  text-decoration: none; /* Remove underline */
+  color: inherit;
+  /* Use the same color as the parent element */
+  text-decoration: none;
+  /* Remove underline */
 }
 
 .nav-links {
@@ -386,7 +411,7 @@ nav {
   animation-delay: calc(var(--order, 0) * var(--ani-speed));
 }
 
-.Header{
+.Header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,7 +429,7 @@ nav {
   border-radius: 10px;
   margin-top: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+
 }
 
 .intro-text {
@@ -553,9 +578,11 @@ nav {
   from {
     opacity: 0;
   }
+
   50% {
     opacity: 0;
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -566,10 +593,271 @@ nav {
   0% {
     transform: scale(0);
   }
+
   60% {
     transform: scale(1.15);
   }
+
   100% {
     transform: scale(1);
+  }
+}
+
+/* Project section */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --width: 220px;
+  --gap: 1rem;
+  --speed: 500ms;
+}
+
+.Main2 {
+  height: 90vh;
+  background: #202227;
+}
+
+.slider {
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: var(--width);
+  height: calc(var(--width) * 1.5);
+  position: absolute;
+  z-index: 1;
+  border-radius: 0.25rem;
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 1);
+  transition: left var(--speed), width var(--speed), height var(--speed);
+  transform-origin: center;
+  overflow: hidden;
+  will-change: transform, opacity;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    box-shadow: 0px 0px 50px 25px rgba(0, 0, 0, 0.25) inset;
+    transition: box-shadow var(--speed);
+    will-change: transform, opacity;
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    filter: blur(0);
+
+    &::after {
+      box-shadow: 0px -50px 150px 50px rgba(0, 0, 0, 0.75) inset;
+    }
+  }
+
+  &:nth-child(3) {
+    left: 50%;
+  }
+
+  &:nth-child(4) {
+    left: calc(50% + var(--width) + var(--gap));
+
+    transition-delay: calc(var(--speed) * 0.2);
+  }
+
+  &:nth-child(5) {
+    left: calc(50% + calc(var(--width) * 2) + calc(var(--gap) * 2));
+
+    transition-delay: calc(var(--speed) * 0.4);
+  }
+
+  &:nth-child(6) {
+    left: calc(50% + calc(var(--width) * 3) + calc(var(--gap) * 3));
+    opacity: 0;
+    transition-delay: calc(var(--speed) * 0.6);
+  }
+}
+
+.content {
+  width: min(30vw, 400px);
+  position: absolute;
+  left: 3rem;
+  z-index: 1;
+  transform: translateY(25%);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  outline: 0;
+
+  & * {
+    outline: 0;
+  }
+
+  & .title {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  & .description {
+    line-height: 1.7;
+    opacity: 1;
+  }
+
+  & button {
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
+    border: 0;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background var(--speed), color var(--speed);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.item:nth-of-type(2) .content {
+  display: flex;
+  animation: show var(--speed) ease-in-out calc(var(--speed) / 2) forwards;
+}
+
+@keyframes show {
+  0% {
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  bottom: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+  border-radius: 100vw;
+  padding: 0.25rem;
+  align-items: center;
+  justify-content: center; /* Centering the buttons */
+}
+
+.nav .btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--speed), color var(--speed);
+}
+
+.nav .btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (width > 650px) and (width < 900px) {
+  .content {
+    & .title {
+      font-size: 1rem;
+    }
+
+    & .description {
+      font-size: 0.7rem;
+    }
+
+    & button {
+      font-size: 0.7rem;
+    }
+  }
+
+  .item {
+    width: 160px;
+    height: 270px;
+
+    &:nth-child(3) {
+      left: 50%;
+    }
+
+    &:nth-child(4) {
+      left: calc(50% + 170px);
+    }
+
+    &:nth-child(5) {
+      left: calc(50% + 340px);
+    }
+
+    &:nth-child(6) {
+      left: calc(50% + 510px);
+      opacity: 0;
+    }
+  }
+}
+
+@media (width < 650px) {
+  .content {
+    & .title {
+      font-size: 0.9rem;
+    }
+
+    & .description {
+      font-size: 0.65rem;
+    }
+
+    & button {
+      font-size: 0.7rem;
+    }
+  }
+
+  .item {
+    width: 130px;
+    height: 220px;
+
+    &:nth-child(3) {
+      left: 50%;
+    }
+
+    &:nth-child(4) {
+      left: calc(50% + 140px);
+    }
+
+    &:nth-child(5) {
+      left: calc(50% + 280px);
+    }
+
+    &:nth-child(6) {
+      left: calc(50% + 420px);
+      opacity: 0;
+    }
   }
 }
