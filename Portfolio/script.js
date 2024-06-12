@@ -68,3 +68,37 @@ function activate(e) {
 }
 
 document.addEventListener("click", activate, false);
+
+// Contact Info
+var focusedCard = document.querySelector('.spotlight');
+
+window.addEventListener('mousemove', e => {
+    /* Get mouse page coordinates */
+    var percentageX = e.pageX / window.innerWidth * 100;
+    var percentageY = e.pageY / window.innerHeight * 100;
+
+    /* Center the background spotlight on mouse coordinates */
+    focusedCard.style.backgroundImage = `radial-gradient(circle at ${percentageX}% ${percentageY}%, transparent 80px, rgba(0,0,0,0.6) 140px)`;
+});
+
+addEventListener("mousemove", (e) => {
+    const { clientX, clientY } = e;
+    if (shouldDraw(clientX, clientY)) {
+        addStr(clientX, clientY);
+        x1 = clientX;
+        y1 = clientY;
+    }
+});
+// Self Typing Text
+var k = 0;
+var txt2 = "Kanishk.Dev";
+var speed2 = 20;
+
+function typeWriter() {
+  if (i < txt2.length) {
+    document.getElementsByClassName(".logo").innerHTML += txt.charAt(i);
+    k++;
+    setTimeout(typeWriter, speed2);
+  }
+}
+typeWriter(txt2);
