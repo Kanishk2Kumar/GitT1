@@ -1,0 +1,422 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+:root {
+  --clr-bg: #efefef;
+  --clr-primary: #0f172a;
+  --easing: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --ani-speed: 300ms;
+}
+
+/* Reset button */
+input,
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  text-transform: none;
+  line-height: normal;
+  overflow: visible;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F6EF;
+  display: grid;
+  place-content: center;
+  background-image: radial-gradient(circle at 50% 50%, #4f505a, #3f4048);
+  position: relative;
+  z-index: 1; /* Ensure body is below other elements */
+}
+
+.star {
+  transform-style: preserve-3d;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  color: red;
+}
+
+.star:before {
+  position: absolute;
+  content: '\2726';
+  color: inherit;
+  inset: 0;
+  text-shadow: 0 0 .8em #fff5;
+}
+
+header {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: inherit; /* Use the same color as the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ff0;
+  transition: color 300ms ease-in-out;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before,
+.nav-links a:focus::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.nav-button {
+  opacity: 0;
+  transform: translateX(-500px);
+  animation: slide-in var(--ani-speed) ease-out forwards;
+  animation-delay: calc(var(--order, 0) * var(--ani-speed));
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 10px;
+}
+
+.introduction {
+  position: relative; /* Ensure introduction section is above the spotlight */
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fff; */
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 600px;
+  margin-right: 2rem;
+  color: #fff;
+}
+
+.intro-photo img {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+.buttons {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #00000050;
+  border: 1px solid #ffffff30;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.buttons::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #00000020;
+  z-index: -1;
+  border-radius: inherit;
+  transition: inset 500ms ease-in-out;
+}
+
+.buttons:hover::before {
+  inset: -2rem;
+  transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.buttons button {
+  background-color: #00000050;
+  border: 1px solid #ffffff30;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  position: relative;
+  isolation: isolate;
+  color: #ffffff90;
+}
+
+.buttons button svg {
+  width: 1.8rem;
+}
+
+.buttons button p {
+  position: absolute;
+  width: 100%;
+  font-size: 0.8rem;
+  opacity: 0;
+  left: 0;
+  bottom: 0.5rem;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 150ms ease-in-out 0ms;
+  outline: none;
+  transform: translateY(10px);
+}
+
+.buttons button:hover p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-in-out 150ms;
+}
+
+.buttons button:focus-visible,
+.buttons button:hover {
+  transform: scale(1.15);
+  z-index: 10;
+  color: #fff;
+  background-color: rgba(var(--bg), 0.5);
+}
+
+.buttons:has(button:focus-visible)
+button:not(:focus-visible),
+.buttons:has(button:hover) button:not(:hover) {
+  opacity: 50%;
+  transform: scale(0.85);
+  z-index: -10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [slide-in-left] {
+    opacity: 0;
+    transform: translateX(-500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-right] {
+    opacity: 0;
+    transform: translateX(500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-top] {
+    opacity: 0;
+    transform: translateY(-500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [slide-in-bottom] {
+    opacity: 0;
+    transform: translateY(500px);
+    animation: slide-in var(--ani-speed) ease-out forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [scale-up] {
+    transform: scale(0);
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+
+  [scale-from-top] {
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0) * var(--ani-speed));
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, transparent 0px, rgba(255,255,255,0.05) 80px, rgba(0,0,0,0.15) 140px);
+    pointer-events: none; 
+    z-index: 5; 
+  }
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Remove scroll bar */
+}
+.container h1,.container .tagline,
+.container p {
+    color: #fff;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px; /* Increase padding for a rectangular shape */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    transition: box-shadow 0.3s; /* Add transition for smooth effect */
+
+    /* Glow effect on hover */
+}
+.container:hover {
+    box-shadow: 0 0 20px 0 rgba(88, 199, 250, 0.7); /* Adjust shadow color and size as needed */
+}
+
+
+
+
+h1 {
+    color: #333;
+    margin-bottom: 20px; /* Add margin to create space between Contact and other content */
+}
+
+p.tagline {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+}
