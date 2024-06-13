@@ -89,19 +89,38 @@ addEventListener("mousemove", (e) => {
         y1 = clientY;
     }
 });
-// New TypeIt effect for the logo
-new TypeIt('#logo', {
-    speed: 150,
-    startDelay: 900,
-    loop: true
-})
-    .type('<em class="c-braces" style="margin-right: 6px;">{{</em><em class="c-braces">}}</em>')
-    .pause(500)
-    .delete(2)
-    .pause(300)
-    .type('<em>Abhinav</em>')
-    .pause(750)
-    .delete(1)
-    .pause(750)
-    .type('<em>.dev</em><em class="c-braces">}}</em>')
-    .pause(1500).go();
+
+// Loader
+// Random stop between 30% and 80%
+let randomStop = Math.random() * (0.8 - 0.3) + 0.3;
+
+let tl = gsap.timeline();
+
+tl
+ .to(".text", {
+  duration: 2,
+  text: "$ sudo apt-get install Portfolio"
+ })
+ .from(".progress-bar", {
+  duration: 0.5,
+  opacity: 0
+ })
+ .to(".progress", {
+  duration: 1,
+  width: `${randomStop * 100}%`
+ })
+ .to(".progress", {
+  duration: 1 - randomStop,
+  width: "100%"
+ })
+ .to(".text, .progress-bar", {
+  duration: 0.5,
+  opacity: 0
+ })
+ .to(".preloader", {
+  duration: 0.5,
+  height: 0,
+  onComplete: () => {
+   document.querySelector(".preloader").style.display = "none";
+  }
+ });

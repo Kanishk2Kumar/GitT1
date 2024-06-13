@@ -346,7 +346,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 5;
 }
 
 nav {
@@ -361,10 +361,9 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   color: inherit;
-  /* Use the same color as the parent element */
   text-decoration: none;
-  /* Remove underline */
 }
 
 .nav-links {
@@ -418,16 +417,12 @@ nav {
   height: 100vh;
   margin-top: 100px;
 }
-.AH1{
-  left: 50%;
-}
 .introduction {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #fff; */
   color: #000;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
   margin-top: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -440,7 +435,11 @@ nav {
   color: #fff;
   opacity: 1;
 }
-
+.intro-text p{
+  font-size: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .intro-photo img {
   width: 300px;
   height: auto;
@@ -1007,18 +1006,110 @@ footer p {
   color: #fff;
   margin-left: 20px;
 }
-/* NEW c0de */
-/* added for logo animation */
 
-.logo span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: inherit; /* Use the same color as the parent element */
-  font-family: 'Courier Prime', Courier, monospace; /* Apply Courier Prime font */
-  display: inline-block;
+/* Loader */
+body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ overflow-x: hidden;
+ min-height: 100dvh;
+ background-color: #f0f0f0;
 }
 
-.loader h1 em {
-  font-family: 'Courier Prime', Courier, monospace;
-  font-style: normal;
+.preloader {
+ width: 100%;
+ height: 100dvh;
+ position: fixed;
+ background-color: black;
+ color: #a6fd29 ;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 10;
+}
+
+.wrapper {
+ width: 100%;
+ text-align: center;
+}
+
+.text {
+ font-size: 2rem;
+ font-weight: 600;
+ margin-bottom: 1rem;
+}
+
+.progress-bar {
+ width: 30%;
+ min-width: 150px;
+ height: 10px;
+ background-color: #333;
+ margin: 0 auto;
+}
+
+.progress {
+ width: 0;
+ height: 100%;
+ background-color: #55aaff;
+}
+
+.content {
+ margin: 0;
+ padding: 0;
+}
+
+@media (width <= 768px) {
+ .text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+ }
+
+ .progress-bar {
+  width: 50%;
+ }
+}
+
+@media (width <= 400px) {
+ .text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+ }
+}
+/* Button Bakchodi */
+.btn3 {
+  align-items: center;
+  background-color: #0077B5;
+  border: 0 solid #fff;
+  border-radius: 3px;
+  display: inline-flex;
+  padding: 8px 8px;
+  transition: all 0.4s ease;
+  margin-right: 20px;
+}
+
+.btn3:hover span {
+  transform: translateX(4px);
+  opacity: 1;
+  position: relative;
+}
+
+.btn3 span {
+  font-size: 20px;
+  color: #fff;
+  transform: translateX(320px);
+  transition: all 0.3s ease;
+  opacity: 0;
+  position: absolute;
+}
+
+.btn3 i {
+  color: #fff;
+}
+
+.btn4 {
+  background-color: #2dba4e;
+  margin-left: 10px;
 }
