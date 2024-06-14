@@ -110,7 +110,7 @@ body {
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
   
   .nav-links a {
@@ -336,4 +336,260 @@ body {
       transform: scale(1);
     }
   }
-  
+  /* General styles for hamburger menu */
+  /* General styles for hamburger menu */
+.hamburger {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #000; /* Adjust color for better visibility */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 600px) {
+.hamburger {
+    display: flex; /* Show on small screens */
+}
+
+.bar {
+    height: 4px;
+    background-color: #fff; /* White color for better visibility on dark backgrounds */
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 63px;
+  left: 191px;
+  width: 51%;
+  height: 39%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.442); /* Dark background */
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+.nav-links.active {
+    display: flex; /* Show the menu when active */
+}
+
+.nav-links a {
+    color: #fff; /* White text color */
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    top: 30px;
+}
+
+}
+
+/* Tablets (portrait) */
+@media (min-width: 601px) and (max-width: 768px) {
+.hamburger {
+    display: flex; /* Show on tablets */
+}
+
+.bar {
+    height: 4px;
+    background-color: #fff; /* White color for better visibility on dark backgrounds */
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 63px;
+    left: 191px;
+    width: 51%;
+    height: 39%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.442); /* Dark background */
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.nav-links.active {
+    display: flex; /* Show the menu when active */
+}
+
+.nav-links a {
+    color: #fff; /* White text color */
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    top: 30px;
+}
+}
+
+
+/* Tablets and small desktops (landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    overflow: auto; /* Allow scrolling */
+  }
+
+  .container {
+    padding: 35px;
+    max-width: 70%;
+  }
+
+  h1 {
+    font-size: 2em; /* Adjust heading size */
+    margin-bottom: 20px;
+  }
+
+  p.tagline, p {
+    font-size: 1.15em; /* Adjust font size */
+    margin-bottom: 20px;
+  }
+
+  .resume-button {
+    padding: 10px 20px;
+    font-size: 1em; /* Adjust button size */
+  }
+
+  footer {
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .social-icon {
+    margin-left: 8px; /* Adjust margin */
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  main {
+    padding-top: 80px; /* Adjust for fixed header */
+  }
+
+  .introduction {
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .intro-text {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    padding: 2rem;
+  }
+
+  .buttons button {
+    padding: 1rem;
+  }
+
+  .buttons button svg {
+    width: 1.8rem;
+  }
+
+  .buttons button p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Larger desktops */
+@media (min-width: 1025px) {
+  body {
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .container {
+    padding: 40px;
+    max-width: 60%;
+  }
+
+  h1 {
+    font-size: 2.25em; /* Adjust heading size */
+    margin-bottom: 25px;
+  }
+
+  p.tagline, p {
+    font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 25px;
+  }
+
+  .resume-button {
+    padding: 12px 24px;
+    font-size: 1.1em; /* Adjust button size */
+  }
+
+  footer {
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 5px 20px; /* Adjust padding */
+  }
+
+  .social-icon {
+    margin-left: 10px; /* Adjust margin */
+  }
+
+  header {
+    padding: 1.25rem 0;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding-top: 90px; /* Adjust for fixed header */
+  }
+
+  .introduction {
+    flex-direction: row;
+    align-items: center;
+    padding: 2.5rem;
+  }
+
+  .intro-text {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    padding: 2.5rem;
+  }
+
+  .buttons button {
+    padding: 1.25rem;
+  }
+
+  .buttons button svg {
+    width: 2rem;
+  }
+
+  .buttons button p {
+    font-size: 0.85rem;
+  }
+}

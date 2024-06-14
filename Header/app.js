@@ -1,3 +1,11 @@
+// Toggle Navigation on Hamburger Click
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 const dist_to_draw = 50;
 const delay = 1000;

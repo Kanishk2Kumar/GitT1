@@ -138,3 +138,150 @@ footer {
   color: #fff;
   margin-left: 10px;
 }
+/* Mobile devices (portrait) */
+@media (max-width: 600px) {
+  body {
+    padding: 20px; /* Add padding for small screens */
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5em; /* Adjust heading size */
+    margin-bottom: 15px;
+  }
+
+  p.tagline, p {
+    font-size: 1em; /* Adjust font size */
+    margin-bottom: 15px;
+  }
+
+  .resume-button {
+    padding: 8px 16px;
+    font-size: 0.9em; /* Adjust button size */
+  }
+
+  footer {
+    flex-direction: column; /* Stack footer items */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 5px 0; /* Adjust padding */
+  }
+
+  .social-icon {
+    margin-left: 5px; /* Adjust margin */
+  }
+}
+
+/* Tablets (portrait) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    padding: 30px;
+    max-width: 80%;
+  }
+
+  h1 {
+    font-size: 1.75em; /* Adjust heading size */
+    margin-bottom: 18px;
+  }
+
+  p.tagline, p {
+    font-size: 1.1em; /* Adjust font size */
+    margin-bottom: 18px;
+  }
+
+  .resume-button {
+    padding: 9px 18px;
+    font-size: 0.95em; /* Adjust button size */
+  }
+
+  footer {
+    flex-direction: column; /* Stack footer items */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 5px 0; /* Adjust padding */
+  }
+
+  .social-icon {
+    margin-left: 7px; /* Adjust margin */
+  }
+}
+
+/* Tablets and small desktops (landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 35px;
+    max-width: 70%;
+  }
+
+  h1 {
+    font-size: 2em; /* Adjust heading size */
+    margin-bottom: 20px;
+  }
+
+  p.tagline, p {
+    font-size: 1.15em; /* Adjust font size */
+    margin-bottom: 20px;
+  }
+
+  .resume-button {
+    padding: 10px 20px;
+    font-size: 1em; /* Adjust button size */
+  }
+
+  footer {
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .social-icon {
+    margin-left: 8px; /* Adjust margin */
+  }
+}
+
+/* Larger desktops */
+@media (min-width: 1025px) {
+  .container {
+    padding: 40px;
+    max-width: 60%;
+  }
+
+  h1 {
+    font-size: 2.25em; /* Adjust heading size */
+    margin-bottom: 25px;
+  }
+
+  p.tagline, p {
+    font-size: 1.2em; /* Adjust font size */
+    margin-bottom: 25px;
+  }
+
+  .resume-button {
+    padding: 12px 24px;
+    font-size: 1.1em; /* Adjust button size */
+  }
+
+  footer {
+    padding: 10px 20px; /* Reduced padding */
+  }
+
+  .footer-left, .footer-right {
+    padding: 5px 20px; /* Reduced padding */
+  }
+
+  .social-icon {
+    margin-left: 10px; /* Adjust margin */
+  }
+}
